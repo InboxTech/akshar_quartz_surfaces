@@ -60,27 +60,27 @@
                         <div class="row">
                             <div class="mb-3 col-6">
                                 <input type="text" class="form-control rounded-0" placeholder="Enter First Name"
-                                    aria-describedby="emailHelp" />
+                                    aria-describedby="emailHelp" id="firstname" />
                             </div>
                             <div class="mb-3 col-6">
                                 <input type="text" class="form-control rounded-0" placeholder="Enter Last Name"
-                                    aria-describedby="emailHelp" />
+                                    aria-describedby="emailHelp" id="lastname" />
                             </div>
                         </div>
     
                         <div class="row">
                             <div class="mb-3 col-6">
                                 <input type="email" class="form-control rounded-0" placeholder="Enter Email Address"
-                                    aria-describedby="emailHelp" />
+                                    aria-describedby="emailHelp" id="email" />
                             </div>
                             <div class="mb-3 col-6">
-                                <input type="text" class="form-control rounded-0" placeholder="Enter Phone no" />
+                                <input type="text" class="form-control rounded-0" placeholder="Enter Phone no" id="phone"/>
                             </div>
                         </div>
                         <div class="mb-3">
-                            <textarea class="form-control rounded-0" placeholder="Enter Message Here" rows="3"></textarea>
+                            <textarea class="form-control rounded-0" placeholder="Enter Message Here" rows="3" id="msg"></textarea>
                         </div>
-                        <button type="submit" class="btn rounded-0 w-100">Submit</button>
+                        <button type="submit" class="btn rounded-0 w-100" onclick="validateForm()">Submit</button>
                     </form>
                 </div>
             </div>

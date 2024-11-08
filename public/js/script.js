@@ -1,31 +1,34 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//   const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
 
-//   // Set active link based on sessionStorage
-//   const activePath = sessionStorage.getItem("activePath");
-//   navLinks.forEach(link => {
-//       link.classList.remove("active");
-//       if (link.getAttribute("href") === activePath) {
-//           link.classList.add("active");
-//       }
-//   });
+function validateForm() {
+    
+  // Get form elements
+  var first_name = document.getElementById('firstname').value.trim();
+  var last_name = document.getElementById('lastname').value.trim();
+  var email = document.getElementById('email').value.trim();
+  var phone = document.getElementById('phone').value.trim();
+  var message = document.getElementById('msg').value.trim();
+  
 
-//   // Update sessionStorage when a link is clicked
-//   navLinks.forEach(link => {
-//       link.addEventListener("click", function () {
-//           sessionStorage.setItem("activePath", this.getAttribute("href"));
-//       });
-//   });
-// });
+  // Basic validation for empty fields
+  if (first_name === "" || last_name === "" || email === "" || phone === "" || message=== "") {
+      alert("Please fill in all fields.");
+      return false;
+  }
 
-// document.querySelectorAll('.nav-link').forEach(link => {
-//   link.addEventListener('click', function (e) {
-//       e.preventDefault();
-//       window.top.location.href = this.href;
-//   });
-// });
+  // Email validation
+  var emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+  if (!emailPattern.test(email)) {
+      alert("Please enter a valid email address.");
+      return false;
+  }
 
+ 
+  // return false; 
 
+  // Everything is valid, allow form submission
+  return true;
+
+}
 
 var swiper = new Swiper(".myBannerSwiper", {
     spaceBetween: 0,
@@ -132,25 +135,4 @@ gsap.from(".product-catalog .catalog",{
    duration: 1,
 })
 
-// const link = document.querySelector(".product-catalog .catalog a");
 
-// link.addEventListener("mouseenter", function() {
-//   // Animate on mouse enter
-//   gsap.to(this, {
-//     scale: 2,
-//     duration: 1,
-//     yoyo: true,
-//     repeat: -1,  // Repeat indefinitely
-//     ease: "power1.inOut"  // Optional: for smoother animation
-//   });
-// });
-
-// link.addEventListener("mouseleave", function() {
-//   // Stop the animation on mouse leave and reset the scale
-//   gsap.killTweensOf(this);  // Stop any running animations on this element
-//   gsap.to(this, {
-//     scale: 1,
-//     duration: 0.5,
-//     ease: "power1.out"
-//   });
-// });
